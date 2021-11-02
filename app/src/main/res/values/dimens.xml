@@ -11,7 +11,7 @@
     <dimen name="radio_boton"> 6dp </dimen>
     <dimen name="padding_boton"> 6dp </dimen>
     <dimen name="texto_radio"> 12sp </dimen>
-    
+
 
 
 </resources>
