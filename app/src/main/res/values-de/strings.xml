@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Drei in Reihe</string>
+    <string name="one_player"> 1 Spieler </string>
+    <string name="two_players"> 2 Spieler </string>
+    <string name="easy"> leicht </string>
+    <string name="normal"> normal </string>
+    <string name="insane"> verrückt </string>
+    <string name="tile"> Kasten </string>
+    <string name="cirlcle_win"> Kreis gewinnt! </string>
+    <string name="x_win"> x gewinnt! </string>
+    <string name="tie"> Unentschieden </string>
+</resources>

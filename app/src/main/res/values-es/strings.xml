@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Triqui</string>
+    <string name="one_player"> 1 Jugador </string>
+    <string name="two_players"> 2 Jugadores </string>
+    <string name="easy"> Fácil </string>
+    <string name="normal"> Normal </string>
+    <string name="insane"> Insane </string>
+    <string name="tile"> Casilla </string>
+    <string name="cirlcle_win"> Cículo gana! </string>
+    <string name="x_win"> x gana! </string>
+    <string name="tie"> Empate </string>
+
+</resources>

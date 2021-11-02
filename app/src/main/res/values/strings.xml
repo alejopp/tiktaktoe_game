@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Triqui</string>
+    <string name="app_name">tic-tac-toe</string>
+    <string name="one_player"> 1 player </string>
+    <string name="two_players"> 2 players </string>
+    <string name="easy"> easy </string>
+    <string name="normal"> normal </string>
+    <string name="insane"> insane </string>
+    <string name="tile"> tile </string>
+    <string name="cirlcle_win"> circle win! </string>
+    <string name="x_win"> x win! </string>
+    <string name="tie"> tie </string>
 </resources>
