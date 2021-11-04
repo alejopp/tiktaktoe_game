@@ -7,6 +7,7 @@
     android:padding="@dimen/padding_pantalla"
     android:weightSum="1"
     android:orientation="horizontal"
+    android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
     <Space
