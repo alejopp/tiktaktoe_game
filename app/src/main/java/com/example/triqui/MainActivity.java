@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
  public class MainActivity extends Activity {
     private Partida partida;
@@ -58,6 +60,46 @@ import android.widget.RadioGroup;
         ((Button) findViewById(R.id.unjugador)).setEnabled(false);
         ((Button) findViewById(R.id.dosjugadores)).setEnabled(false);
         ((RadioGroup) findViewById(R.id.configDif)).setAlpha(0);
+
+
+    }
+
+    public void toque(View vistaCasilla){
+        int casilla = 0;
+
+        if(partida == null){
+            return;
+        }
+
+        for (int i = 0; i < 9; i++){
+            if (casillas[i]== vistaCasilla.getId()){
+                casilla = i;
+                break;
+            }
+        }
+
+        marca(casilla);
+        casilla = partida.ia();
+        partida.turno();
+        marca(casilla);
+        partida.turno();
+        /*
+        Toast miToast = Toast.makeText(this,"Has pulsado la casilla" + casilla,Toast.LENGTH_LONG);
+        miToast.setGravity(Gravity.CENTER,0,0);
+        miToast.show();
+         */
+    }
+
+    private void  marca(int casilla){
+        ImageView imagen;
+        imagen = (ImageView) findViewById(casillas[casilla]);
+
+        if (partida.jugador ==1){
+            imagen.setImageResource(R.drawable.circulo);
+        }
+        else{
+            imagen.setImageResource(R.drawable.equis);
+        }
 
     }
 }

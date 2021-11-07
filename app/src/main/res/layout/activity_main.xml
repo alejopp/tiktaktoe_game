@@ -30,9 +30,8 @@
         <Button
             android:id="@+id/unjugador"
             style="@style/boton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/one_player" />
+            android:text="@string/one_player"
+            android:onClick="aJugar"/>
 
         <RadioGroup
             android:id="@+id/configDif"
@@ -65,9 +64,8 @@
         <Button
             android:id="@+id/dosjugadores"
             style="@style/boton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/two_players" />
+            android:text="@string/two_players"
+            android:onClick="aJugar"/>
     </LinearLayout>
 
     <Space
@@ -84,42 +82,51 @@
 
         <ImageView
             android:id="@+id/a1"
+            android:onClick="toque"
             style="@style/casilla" />
 
         <ImageView
             android:id="@+id/a2"
+            android:onClick="toque"
             style="@style/casilla" />
 
         <ImageView
             android:id="@+id/a3"
+            android:onClick="toque"
             style="@style/casilla"
             android:src="@drawable/circulo" />
 
         <ImageView
             android:id="@+id/b1"
+            android:onClick="toque"
             style="@style/casilla" />
 
         <ImageView
             android:id="@+id/b2"
+            android:onClick="toque"
             style="@style/casilla"
             android:src="@drawable/circulo" />
 
         <ImageView
             android:id="@+id/b3"
+            android:onClick="toque"
             style="@style/casilla" />
 
         <ImageView
             android:id="@+id/c1"
+            android:onClick="toque"
             style="@style/casilla"
             android:src="@drawable/circulo" />
 
         <ImageView
             android:id="@+id/c2"
+            android:onClick="toque"
             style="@style/casilla"
             android:src="@drawable/equis" />
 
         <ImageView
             android:id="@+id/c3"
+            android:onClick="toque"
             style="@style/casilla"
             android:src="@drawable/equis" />
 
