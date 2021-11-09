@@ -67,6 +67,7 @@ import android.widget.Toast;
     public void toque(View vistaCasilla){
         int casilla = 0;
 
+        //Se debe iniciar la partida para ejecutar este método
         if(partida == null){
             return;
         }
@@ -77,10 +78,20 @@ import android.widget.Toast;
                 break;
             }
         }
+        // Verificar si la casilla pulsada está ocupada o no
+        if(partida.compruebaCasilla(casilla)== false){
+            return;
+        }
 
+        //Rellenar casilla del jugador
         marca(casilla);
-        casilla = partida.ia();
         partida.turno();
+        casilla = partida.ia();
+
+        //Rellenar casilla de la máquina
+        while(partida.compruebaCasilla(casilla) != true){
+            casilla = partida.ia();
+        }
         marca(casilla);
         partida.turno();
         /*
