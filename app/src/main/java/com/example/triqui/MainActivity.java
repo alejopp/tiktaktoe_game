@@ -85,22 +85,44 @@ import android.widget.Toast;
 
         //Rellenar casilla del jugador
         marca(casilla);
-        partida.turno();
-        casilla = partida.ia();
+        int resultado = partida.turno();
+        System.out.println("resultado: " + resultado);
+        if(resultado >0){
+            terminar(resultado);
+            return;
+        };
 
+        casilla = partida.ia();
         //Rellenar casilla de la máquina
         while(partida.compruebaCasilla(casilla) != true){
             casilla = partida.ia();
         }
         marca(casilla);
-        partida.turno();
-        /*
-        Toast miToast = Toast.makeText(this,"Has pulsado la casilla" + casilla,Toast.LENGTH_LONG);
-        miToast.setGravity(Gravity.CENTER,0,0);
-        miToast.show();
-         */
+        resultado = partida.turno();
+        if(resultado >0) terminar(resultado);
+
     }
 
+    private void terminar(int resultado){
+        String mensaje;
+
+        if(resultado == 1) mensaje = "Gana el jugador 1!";
+        else if(resultado == 2) mensaje = "Gana el jugador 2!";
+        else mensaje = "empate";
+
+        Toast miToast = Toast.makeText(this,mensaje,Toast.LENGTH_LONG);
+        miToast.setGravity(Gravity.CENTER,0,0);
+        miToast.show();
+
+        partida = null;
+
+        ((Button) findViewById(R.id.unjugador)).setEnabled(true);
+        ((Button) findViewById(R.id.dosjugadores)).setEnabled(true);
+        ((RadioGroup) findViewById(R.id.configDif)).setAlpha(1);
+
+    }
+
+    //método para insertar la figura respectiva de cada jugador
     private void  marca(int casilla){
         ImageView imagen;
         imagen = (ImageView) findViewById(casillas[casilla]);

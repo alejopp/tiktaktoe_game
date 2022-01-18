@@ -28,9 +28,37 @@ public class Partida {
         return true;
     }
 
+    public int dosEnRaya(int jugadorEnTurno){
+        int casilla = -1;
+        int cuantasLLeva = 0;
+        for(int i = 0; i< COMBINACIONES.length; i++){
+            for(int pos : COMBINACIONES[i]){
+                if(casillas[pos]== jugadorEnTurno) cuantasLLeva++;
+                if(casillas[pos]==0) casilla=pos;
+            }
+            if(cuantasLLeva == 2 && casilla != -1) return casilla;
+            casilla = -1;
+            cuantasLLeva=0;
+        }
+        return -1;
+    }
+
     //Inteligencia artificial
     public int ia(){
         int casilla;
+        casilla = dosEnRaya(2);
+
+        if(casilla != -1) return casilla;
+        if(dificultad >0){
+            casilla = dosEnRaya(1);
+            if(casilla != -1) return casilla;
+        }
+        if(dificultad == 2) {
+            if(casillas[0]==0) return 0;
+            if(casillas[2]==0) return 2;
+            if(casillas[6]==0) return 6;
+            if(casillas[8]==0) return 8;
+        }
         Random casilla_azar = new Random();
         casilla = casilla_azar.nextInt(9);
 
@@ -46,19 +74,22 @@ public class Partida {
         // 3 En caso de empate
 
         boolean empate = true;
-        boolean ultimoMovimiento = true;
-
 
         for(int i=0; i <COMBINACIONES.length; i++){
+            boolean ultimoMovimiento = true;
+            System.out.println("ultimo mov: " + ultimoMovimiento);
+            System.out.println("jugador: " + jugador);
             for(int pos: COMBINACIONES[i]){
+                System.out.println("posicion:" + pos + " " + casillas[pos]);
                 if(casillas[pos] != jugador) ultimoMovimiento = false;
                 if (casillas[pos] ==0){
                     empate = false;
                 }
             }
-            if(ultimoMovimiento) return jugador; 
-
+            if(ultimoMovimiento) return jugador;
+            System.out.println("-----------------");
         }
+
 
         if(empate){
             return 3;
